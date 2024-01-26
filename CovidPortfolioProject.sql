@@ -67,12 +67,7 @@ From PortfolioProject..CovidDeaths
 order by 1,2
 
 --*************************************************************************************************************
-
-
-
 --Looking at Total Pop vs Vaccinations
-
-
 
 Select dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations
 , Sum(convert(int,vac.new_vaccinations)) over (Partition by dea.location order by dea.location
@@ -103,7 +98,7 @@ where dea.continent is not null
 Select *,(RollingPeopleVaccinated/population)*100
 From PopvsVac
 
-
+--*************************************************************************************************************
 --Temp Table
 
 
@@ -132,7 +127,7 @@ where dea.continent is not null
 Select *,(RollingPeopleVaccinated/population)*100
 From PercentPopVaccinated
 
-
+--*************************************************************************************************************
 --Creating view to store data for later visualization
 
 Create View PercentVaccinated as 
@@ -150,7 +145,7 @@ Select *
 From PercentVaccinated
 
 
-
+--*************************************************************************************************************
 
 
 
